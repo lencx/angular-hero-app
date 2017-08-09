@@ -1,0 +1,15 @@
+button {
+    width: 80px;
+    margin-top: 20px;
+}
+.hero-info {
+    background: #eee;
+    font-size: 30px;
+    padding: 10px 20px;
+}
+input {
+    width: 240px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 24px;
+}

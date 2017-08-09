@@ -1,0 +1,15 @@
+.active {
+    color: #f0a;
+    background: #eee;
+    font-weight: bold;
+    border-color: #f6c;
+}
+a {
+    padding: 10px 20px;
+    color: #fff;
+    background: #666;
+    font-size: 18px;
+    text-decoration: none;
+    border: solid 1px #666;
+    border-radius: 5px;
+}

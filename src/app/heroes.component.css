@@ -1,0 +1,29 @@
+.selected {
+    color: red;
+    border-color: #f66;
+}
+.selected .badge {
+    color: #333;
+    background: orange;
+}
+.badge {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+    text-align: center;
+}
+li {
+    list-style: none;
+    height: 30px;
+    width: 300px;
+    line-height: 30px;
+    border: solid 1px #666;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+button {
+    width: 160px;
+}
