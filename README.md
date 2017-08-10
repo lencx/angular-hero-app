@@ -29,7 +29,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Add pug template
 
-- **Path**: *node_modules/@angular/cli/models/webpack-configs/common.js*
+- **Path**: `node_modules/@angular/cli/models/webpack-configs/common.js`
 - **\*Add rules:** *Please re-add the rule when node_modules changes !!!*
 
 ```js
