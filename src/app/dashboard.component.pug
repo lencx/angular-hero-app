@@ -1,0 +1,5 @@
+h3 Top Heroes
+.grid
+    a(*ngFor="let hero of heroes", [routerLink]='[\'/detail\', hero.id]')
+        .module.hero
+            h4 {{hero.name}}

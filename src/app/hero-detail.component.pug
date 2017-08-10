@@ -1,0 +1,10 @@
+div(*ngIf='hero')
+    h2 {{hero.name}} details!
+    .hero-info
+        .hero-id
+            label id: 
+            | {{hero.id}}
+        .hero-name
+            label name:
+            input([(ngModel)]='hero.name', placeholder='name')
+button((click)='goBack()') Back

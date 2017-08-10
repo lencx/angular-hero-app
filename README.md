@@ -26,3 +26,30 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Add pug template
+
+- **Path**: *node_modules/@angular/cli/models/webpack-configs/common.js*
+- **\*Add rules:** *Please re-add the rule when node_modules changes !!!*
+
+```js
+module: {
+    rules: [
+        {
+            test: /\.pug$/,
+            use: ['raw-loader', 'pug-html-loader']
+
+            // https://github.com/angular/angular-cli/issues/1886#issuecomment-281332399
+            // loader: "apply-loader!pug-loader?self"
+        }
+    ]
+}
+```
+
+<!-- https://hackernoon.com/using-pug-jade-with-angular-with-cli-5592b7ee24e6  -->
+
+## Build (**prod**)
+
+```bash
+ng build --prod
+```
