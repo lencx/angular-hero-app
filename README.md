@@ -46,6 +46,21 @@ module: {
 }
 ```
 
+### Pug template compilation error
+
+> angular template reference variables
+
+```pug
+//- error
+input(#heroName)
+//- ok
+<input #heroName>
+//- ok
+<input ref-heroName>
+```
+
+![ref var error](./example/img/ref-var-err.png)
+
 <!-- https://hackernoon.com/using-pug-jade-with-angular-with-cli-5592b7ee24e6  -->
 
 ## Build (**prod**)

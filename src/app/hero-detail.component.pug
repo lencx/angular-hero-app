@@ -7,4 +7,5 @@ div(*ngIf='hero')
         .hero-name
             label name:
             input([(ngModel)]='hero.name', placeholder='name')
+button((click)='save()') Save
 button((click)='goBack()') Back

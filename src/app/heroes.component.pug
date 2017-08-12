@@ -1,4 +1,11 @@
 h1 {{title}}
+div.add
+    label Hero name:
+    //- <input ref-heroName>
+    <input #heroName>
+    //- input(#heroName)
+    button((click)='add(heroName.value); heroName.value=\'\'') Add
+
 ul.heroes
     li(
         *ngFor='let hero of heroes',
@@ -7,6 +14,7 @@ ul.heroes
     )
         span.badge {{hero.id}}
         | {{hero.name}}
+        button.del((click)='del(hero); $event.stopPropagation()') X
 div(*ngIf='selectedHero')
     h2 {{selectedHero.name | uppercase}} is my hero
-    button((click)='gotoDetail()') View Details
+    button.goto-detail((click)='gotoDetail()') View Details
