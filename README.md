@@ -1,6 +1,6 @@
 # AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
 ## Development server
 
@@ -27,20 +27,44 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+---
+---
+
+## Add Command
+
+```bash
+# clear build file
+yarn clear
+
+# uglify js
+yarn build:prod
+```
+
 ## Add pug template
 
-- **Path**: `node_modules/@angular/cli/models/webpack-configs/common.js`
-- **\*Add rules:** *Please re-add the rule when node_modules changes !!!*
+### Step
+
+> Step 1
+
+```bash
+ng eject
+
+yarn
+
+yarn add pug-html-loader --dev
+```
+
+![ng eject](./example/img/ng-eject.png)
+
+> Step 2
 
 ```js
-module: {
-    rules: [
+// edit webpack.config.js
+"modules": {
+    "rules": [
         {
-            test: /\.pug$/,
-            use: ['raw-loader', 'pug-html-loader']
-
-            // https://github.com/angular/angular-cli/issues/1886#issuecomment-281332399
-            // loader: "apply-loader!pug-loader?self"
+            "test": /\.pug$/,
+            "use": ["raw-loader", "pug-html-loader"]
         }
     ]
 }
@@ -61,10 +85,4 @@ input(#heroName)
 
 ![ref var error](./example/img/ref-var-err.png)
 
-<!-- https://hackernoon.com/using-pug-jade-with-angular-with-cli-5592b7ee24e6  -->
-
-## Build (**prod**)
-
-```bash
-ng build --prod
-```
+## [More](./HERO.DOC.md)

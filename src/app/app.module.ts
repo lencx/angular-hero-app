@@ -2,6 +2,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +25,7 @@ import { InMemoryDataService } from './in-memory-data.service';
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
