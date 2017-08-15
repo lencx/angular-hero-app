@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { AppMdModule } from './app-md.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard.component';
@@ -25,6 +26,7 @@ import { InMemoryDataService } from './in-memory-data.service';
   ],
   imports: [
     BrowserModule,
+    AppMdModule,
     NoopAnimationsModule,
     FormsModule,
     HttpModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 
 import { HeroService } from './hero.service';
 import { Hero } from './hero';
@@ -10,7 +10,7 @@ import { Hero } from './hero';
 })
 
 export class DashboardComponent implements OnInit {
-    constructor(private heroService: HeroService) {}
+    constructor(private heroService: HeroService) { }
     heroes: Hero[] = [];
     ngOnInit(): void {
         this.heroService.getHeroes()
