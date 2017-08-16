@@ -40,7 +40,10 @@ export class HeroService {
     }
     create(name: string): Promise<Hero> {
         return this.http
-        .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .post(this.heroesUrl, JSON.stringify({
+            name: name,
+            avatar: `/assets/img/avatar/${Math.ceil(Math.random() * 14)}.jpg`
+        }), {headers: this.headers})
         .toPromise()
         .then(res => res.json().data as Hero)
         .catch(this.handleError);

@@ -19,10 +19,13 @@ table {
         &:nth-child(3n) {
             background: #edf;
         }
+        td {
+            cursor: pointer;
+        }
     }
 }
 .selected {
-    background: #eee;
+    background: rgba(180, 60, 10, .5) !important;
     .edit {
         display: none;
     }

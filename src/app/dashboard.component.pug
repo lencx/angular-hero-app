@@ -2,5 +2,8 @@ app-search
 a(*ngFor="let hero of heroes", [routerLink]='[\'/detail\', hero.id]')
     md-card
         md-card-header
-            md-card-title {{hero.id}}
-        md-card-content {{hero.name}}
+            div.avatar(md-card-avatar)
+                img([src]='hero.avatar')
+            md-card-title NO.{{hero.id}}
+            md-card-subtitle {{hero.name}}
+        //- md-card-content {{hero.name}} 
