@@ -1,22 +1,5 @@
 app-search
-h3 Top Heroes
-//- .grid
-//-     a(*ngFor="let hero of heroes", [routerLink]='[\'/detail\', hero.id]')
-//-         .module.hero
-//-             h4 {{hero.name}}
-
-//- md-grid-list(cols='6', rowHeight='2:1')
-//-     md-grid-tile(*ngFor="let hero of heroes")
-//-         a([routerLink]='[\'/detail\', hero.id]')
-//-             .module.hero
-//-                 h4 {{hero.name}}
-
-
 a(*ngFor="let hero of heroes", [routerLink]='[\'/detail\', hero.id]')
-    //- md-card
-    //-     md-card-herder
-    //-         md-card-title {{hero.id}}
-    //-     md-card-content {{hero.name}}
     md-card
         md-card-header
             md-card-title {{hero.id}}

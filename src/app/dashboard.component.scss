@@ -1,17 +1,7 @@
 a {
     display: inline-block;
-    width: 120px;
-    height: 120px;
-    background: #aac;
+    width: 30%;
+    min-width: 200px;
     margin: 10px;
-    text-align: center;
-    line-height: 120px;
     text-decoration: none;
-}
-a:hover {
-    background: #6da;
-    color: #468;
-}
-h4 {
-    margin: 0;
 }

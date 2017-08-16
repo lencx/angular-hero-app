@@ -1,6 +1,11 @@
 #search
-    h4 Hero search
-    <input #searchBox id='search-box' (keyup)='search(searchBox.value)'>
+    md-input-container
+        input#search-box(
+            placeholder="Search",
+            mdInput, #searchBox,
+            (keyup)='search(searchBox.value)'
+        )
+        i.material-icons search
     ul
         li.search-result(
             *ngFor='let hero of heroes | async',

@@ -2,10 +2,10 @@ div(*ngIf='hero')
     h2 {{hero.name}} details!
     .hero-info
         .hero-id
-            label id: 
-            | {{hero.id}}
-        .hero-name
-            label name:
-            input([(ngModel)]='hero.name', placeholder='name')
-button((click)='save()') Save
-button((click)='goBack()') Back
+            label id: {{hero.id}}
+        md-input-container
+            input(mdInput [(ngModel)]='hero.name', placeholder='Name')
+button.save(md-button (click)='save()')
+    i.material-icons save
+button.back(md-button (click)='goBack()')
+    i.material-icons undo 

@@ -22,9 +22,12 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
   sortedData;
+
   getHeroes(): void {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
+
+  // hero list sort
   sortData(sort: Sort) {
     const data = this.heroService.getHeroes().then(heroes => this.heroes = heroes.slice());
     if (!sort.active || sort.direction === '') {
@@ -43,6 +46,8 @@ export class HeroesComponent implements OnInit {
       return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
     }
   }
+
+  // hero add
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }

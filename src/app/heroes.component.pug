@@ -1,45 +1,30 @@
-h1 {{title}}
-//- div.add
-//-     label Hero name:
-//-     //- <input #heroName>
-//-     <input ref-heroName>
-//-     //- input(#heroName)
 md-input-container
-    <input mdInput #heroName placeholder="Hero Name:">
+    input(mdInput, #heroName, placeholder="Hero Name:")
 
 button(md-icon-button, (click)='add(heroName.value); heroName.value=\'\'')
     i.material-icons add_circle
-
 
 table(mdSort, (mdSortChange)='sortData($event)')
     tr
         th(md-sort-header='id') ID
         th(md-sort-header='name') Name
-        th(md-sort-header='edit') Edit
-        th(md-sort-header='delete') Delete
+        th Edit
+        th Delete
     
-    tr(*ngFor='let hero of heroes')
+    tr(
+        *ngFor='let hero of heroes',
+        (click)='onSelect(hero)',
+        [class.selected]='hero===selectedHero'
+    )
         td {{hero.id}}
         td {{hero.name}}
         td
-            button(md-icon-button, (click)='onSelect(hero)', [class.selected]='hero===selectedHero')
-                i.material-icons mode_edit
+            button(md-icon-button)
+                i.edit.material-icons mode_edit
+                i.material-icons(
+                    *ngIf='hero===selectedHero',
+                    (click)='gotoDetail()'
+                ) description
         td
             button.del(md-icon-button, (click)='del(hero); $event.stopPropagation()')
                 i.material-icons delete_forever
-
-
-
-//- ul.heroes
-//-     li(
-//-         *ngFor='let hero of heroes',
-//-         (click)='onSelect(hero)',
-//-         [class.selected]='hero === selectedHero'
-//-     )
-//-         span.badge {{hero.id}}
-//-         | {{hero.name}}
-//-         button.del(md-icon-button, (click)='del(hero); $event.stopPropagation()')
-//-             i.material-icons delete_forever
-div(*ngIf='selectedHero')
-    h2 {{selectedHero.name | uppercase}} is my hero
-    button.goto-detail((click)='gotoDetail()') View Details

@@ -1,6 +1,4 @@
-h1 {{title}}
 nav
-    a(routerLink='/dashboard', routerLinkActive='active')
-        | Dashboard
-    a(routerLink='/heroes', routerLinkActive='active') Heroes
+    a(md-button, routerLink='/dashboard', routerLinkActive='active') Dashboard
+    a(md-button, routerLink='/heroes', routerLinkActive='active') Heroes
 router-outlet

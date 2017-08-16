@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { MdCardModule, MdButtonModule, MdInputModule, MdSortModule} from '@angular/material';
+import { MdCardModule, MdButtonModule, MdInputModule, MdSortModule, MdPaginatorModule} from '@angular/material';
 
 const mdArr = [
     MdCardModule,
     MdButtonModule,
     MdInputModule,
-    MdSortModule
+    MdSortModule,
+    MdPaginatorModule
 ];
 
 @NgModule({

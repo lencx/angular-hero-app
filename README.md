@@ -85,4 +85,44 @@ input(#heroName)
 
 ![ref var error](./example/img/ref-var-err.png)
 
-## [More](./HERO.DOC.md)
+#### [Solutions: stackoverflow](https://stackoverflow.com/q/45687501/7324114?stw=2)
+
+> [pug doc (attributes)](https://pugjs.org/language/attributes.html)
+
+>> 当遇到解决不了的问题时，换个思路也许就好了，我之前一直想着从`pug`变量入手，但现在看来应该是属性或解析规则的问题。
+
+- add doctype html to the header of the file.
+
+```pug
+doctype html
+input(#heroName)
+```
+
+- use pug `&attributes` syntax can be used to explode an object into attributes of an element.
+
+```pug
+input&attributes({'#heroName': ''})
+```
+
+- edit `webpack.config.js` file.
+
+```js
+"modules": {
+    "rules": [
+        {
+        "test": /\.pug$/,
+        "use": [
+          'raw-loader',
+          {
+            "loader": 'pug-html-loader',
+            "options": {
+              "doctype": 'html'
+            }
+          }
+        ]
+      }
+    ]
+}
+```
+
+## [More ...](./HERO.DOC.md)

@@ -109,9 +109,21 @@ module.exports = {
         "test": /\.html$/,
         "loader": "raw-loader"
       },
+      // {
+      //   "test": /\.pug$/,
+      //   "use": ["raw-loader", "pug-html-loader"]
+      // },
       {
         "test": /\.pug$/,
-        "use": ["raw-loader", "pug-html-loader"]
+        "use": [
+          'raw-loader',
+          {
+            "loader": 'pug-html-loader',
+            "options": {
+              "doctype": 'html'
+            }
+          }
+        ]
       },
       {
         "test": /\.(eot|svg|cur)$/,
