@@ -10,8 +10,10 @@
 
 > [material](https://material.angular.io)
 
-* @angular/material
 * @angular/cdk
-* @angular/animations
+* @angular/material
+* dexie
+* pug-html-loader
+* shx
 * [hammerjs](https://hammerjs.github.io/): Gesture Support
 * material-design-icons

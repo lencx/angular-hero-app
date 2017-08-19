@@ -4,10 +4,25 @@ md-input-container
 button(md-icon-button, (click)='add(heroName.value); heroName.value=\'\'')
     i.material-icons add_circle
 
+.upload-avatar
+    image-upload(
+        [preview]='true',
+        [maxFileSize]='61440',
+        [extensions]='["jpg", "png", "gif"]',
+        [max]='1',
+        [headers]="[{header: 'Authorization', value: 'hero-avatar'}]",
+        (onFileUploadFinish)='imageUploaded($event)',
+        (isPending)='uploadStateChange($event)',
+        (onRemove)='imageRemoved($event)',
+        [buttonCaption]='"Select image"'
+    )
+
 table(mdSort, (mdSortChange)='sortData($event)')
     tr
-        th(md-sort-header='id') ID
-        th(md-sort-header='name') Name
+        th(md-sort-header='id')
+            button(md-button) ID
+        th(md-sort-header='name')
+            button(md-button) Name
         th Edit
         th Delete
     

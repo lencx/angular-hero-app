@@ -5,7 +5,7 @@ div(*ngIf='hero')
             label id: {{hero.id}}
         md-input-container
             input(mdInput [(ngModel)]='hero.name', placeholder='Name')
-button.save(md-button (click)='save()')
+button.save(md-button, (click)='save()')
     i.material-icons save
-button.back(md-button (click)='goBack()')
+button.back(md-button, (click)='goBack()')
     i.material-icons undo 

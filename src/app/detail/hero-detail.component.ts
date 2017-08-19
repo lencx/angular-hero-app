@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService } from './hero.service';
-import { Hero } from './hero';
+import { HeroService } from '../service/hero.service';
+import { Hero } from '../hero';
 
 @Component({
     selector: 'app-hero-detail',

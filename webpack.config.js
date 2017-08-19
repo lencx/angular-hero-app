@@ -472,6 +472,12 @@ module.exports = {
   "devServer": {
     "historyApiFallback": true,
     "port": 4200,
-    "host": host
+    "host": host,
+    // "proxy": {
+    //   '/api/*': {
+    //       "target": 'http://localhost:3000',
+    //       "secure": false
+    //   }
+    // }
   }
 };
