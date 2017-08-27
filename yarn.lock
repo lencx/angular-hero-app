@@ -111,6 +111,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/core@^2.4.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.10.tgz#0b8320a65065965d998645b1f5cd3cf769b441ea"
+
 "@angular/core@^4.2.4":
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.3.4.tgz#42dd8046600f5a080a4e1212116b12fe97bcfcb4"
@@ -290,6 +294,14 @@ amdefine@>=0.0.4:
 angular-in-memory-web-api@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/angular-in-memory-web-api/-/angular-in-memory-web-api-0.3.2.tgz#8836d9e2534d37b728f3cb5a1caf6fe1e7fbbecd"
+
+angular2-indexeddb@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/angular2-indexeddb/-/angular2-indexeddb-1.0.11.tgz#a2505427c2aff3b9984ab5fd1c0f914193ec989a"
+  dependencies:
+    "@angular/core" "^2.4.0"
+    rxjs "^5.0.1"
+    zone.js "^0.7.2"
 
 ansi-escapes@^2.0.0:
   version "2.0.0"
@@ -4654,7 +4666,7 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rxjs@^5.4.2:
+rxjs@^5.0.1, rxjs@^5.4.2:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
@@ -5892,6 +5904,10 @@ yeast@0.1.2:
 yn@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/yn/-/yn-2.0.0.tgz#e5adabc8acf408f6385fc76495684c88e6af689a"
+
+zone.js@^0.7.2:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.7.8.tgz#4f3fe8834d44597f2639053a0fa438df34fffded"
 
 zone.js@^0.8.14:
   version "0.8.16"

@@ -38,6 +38,9 @@ yarn clear
 
 # uglify js
 yarn build:prod
+
+# dev server
+yarn dev
 ```
 
 ## Add pug template

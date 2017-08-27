@@ -1,0 +1,16 @@
+h2 Dashboard
+
+//- .dashboard-grid
+//-     ul
+//-         li(*ngFor='let hero of heroes', [routerLink]='["/detail", hero.id]')
+//-             h4 {{hero.name}}
+
+ul.grid
+    li(*ngFor="let hero of heroes", [routerLink]='["/detail", hero.id]')
+        md-card
+            md-card-header
+                div.avatar(md-card-avatar)
+                    img([src]='hero.avatar')
+                md-card-title NO.{{hero.id}}
+                md-card-subtitle {{hero.name}}
+            md-card-content {{hero.description}} 

@@ -1,0 +1,25 @@
+md-input-container
+    input(mdInput, #heroName, placeholder='name')
+input(type='file', (change)='fileChangeEvent($event)')
+md-input-container
+    textarea(
+        mdInput, cols=30, rows=3,
+        #heroDescription,
+        placeholder='description'
+    )
+
+button(
+    md-button,
+    (click)='addHeroInfo(heroName.value, heroDescription.value)'
+)
+    i.material-icons note_add
+
+.preview(*ngIf='heroName.value || avatar || heroDescription.value')
+    h3 preview:
+    md-card
+        md-card-header
+            .avatar(md-card-avatar)
+                img([src]='avatar')
+            md-card-title NO
+            md-card-subtitle {{heroName.value}}
+        md-card-content.description {{heroDescription.value}}

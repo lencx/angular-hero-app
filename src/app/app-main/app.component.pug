@@ -1,4 +1,15 @@
+mixin nav(...items)
+    each item in items
+        a(md-button, routerLink= item[0], routerLinkActive='active')
+            .material-icons= item[1]
+
 nav
-    a(md-button, routerLink='/dashboard', routerLinkActive='active') Dashboard
-    a(md-button, routerLink='/heroes', routerLinkActive='active') Heroes
+    +nav(
+        ['/dashboard', 'dashboard'],
+        ['/add', 'person_add'],
+        ['/heroes', 'view_list'],
+        ['/setting', 'settings']
+    )
+
+hr
 router-outlet

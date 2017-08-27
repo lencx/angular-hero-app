@@ -21,7 +21,9 @@ const baseHref = "";
 const deployUrl = "";
 // const host = "192.168.199.234"
 // const host = "172.16.0.9"
+// const host = "172.16.0.24"
 const host = "localhost"
+const port = 4201
 const postcssPlugins = function () {
         // safe settings based on: https://github.com/ben-eb/cssnano/issues/358#issuecomment-283696193
         const importantCommentRe = /@preserve|@license|[@#]\s*source(?:Mapping)?URL|^!/i;
@@ -471,7 +473,7 @@ module.exports = {
   },
   "devServer": {
     "historyApiFallback": true,
-    "port": 4200,
+    "port": port,
     "host": host,
     // "proxy": {
     //   '/api/*': {

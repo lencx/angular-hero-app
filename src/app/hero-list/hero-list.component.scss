@@ -1,0 +1,25 @@
+a {
+    color: #5DB558;
+    &:hover {
+        background: pink;
+    }
+    &.active {
+        color: #203C63;
+        background: #CDDEA4;
+        font-weight: bold;
+    }
+}
+
+table {
+    td {
+        max-width: 50px;
+        word-break: keep-all;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.selected {
+    color: red;
+}
