@@ -7,10 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 /**
  * Component
  */
-import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
-import { HeroDashboardComponent } from './../hero-dashboard/hero-dashboard.component';
-import { HeroListComponent } from './../hero-list/hero-list.component';
-import { HeroAddComponent } from './../hero-add/hero-add.component';
+import { HeroDetailComponent } from './../../hero-detail/hero-detail.component';
+import { HeroDashboardComponent } from './../../hero-dashboard/hero-dashboard.component';
+import { HeroListComponent } from './../../hero-list/hero-list.component';
+import { HeroAddComponent } from './../../hero-add/hero-add.component';
 
 const routes: Routes = [
     {

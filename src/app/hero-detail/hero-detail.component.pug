@@ -2,11 +2,17 @@
 div(*ngIf='hero')
     h2 {{hero.name}} details!
     div
-        label id:
+        label ID:
         | {{hero.id}}
     div
-        label name:
+        label Avatar:
+        img([src]='hero.avatar')
+    div
+        label Name:
         input([(ngModel)]='hero.name', placeholder='name')
+    div
+        label Description:
+        textarea([(ngModel)]='hero.description', placeholder='Description')
 
 button(md-button, (click)='save()')
     .material-icons save

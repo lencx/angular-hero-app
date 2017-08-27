@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
-import { DXHeroService, HeroWithID } from './../app-service/core/dxhero.service';
+import { DXHeroService, HeroWithID } from './../core/service/dxhero.service';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -39,7 +39,7 @@ export class HeroAddComponent {
     }
 
     /**
-     * Add Hero
+     * Add Hero && Back Dashboard
      * @param name - hero name
      * @param desc - hero description
      */

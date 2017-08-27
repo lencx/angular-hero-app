@@ -1,13 +1,10 @@
-import { DXHeroService } from './../app-service/core/dxhero.service';
-import { HeroService } from './../app-service/hero.service';
 import { Location } from '@angular/common';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-// import { Component, OnInit } from '@angular/core';
-import { Component, Input, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
 
+import { DXHeroService, DXHero } from './../core/service/dxhero.service';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -17,27 +14,31 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class HeroDetailComponent implements OnInit {
-    // @Input() hero: Hero;
-    hero: Hero;
+    hero: DXHero;
+
     constructor(
-        private heroService: HeroService,
         private dxHeroService: DXHeroService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        private router: Router
     ) { }
+
     ngOnInit(): void {
         this.route.paramMap
-            .switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id'))).subscribe(hero => this.hero = hero);
-        // this.route.paramMap
+            .switchMap((params: ParamMap) => this.dxHeroService.getInfo(+params.get('id'))).subscribe(hero => this.hero = hero);
     }
+
     goBack(): void {
         this.location.back();
     }
+
+    save(): void {
+        const data = {
+            name: this.hero.name,
+            avatar: this.hero.avatar,
+            description: this.hero.description
+        };
+        this.dxHeroService.update(this.hero.id, data);
+        this.router.navigate(['/heroes']);
+    }
 }
-
-// export class HeroDetailComponent implements OnInit {
-//     hero: Hero;
-//     ngOnInit() {
-
-//     }
-// }

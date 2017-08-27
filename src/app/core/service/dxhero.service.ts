@@ -12,6 +12,7 @@ import { DexieService } from './dexie.service';
 // import { Hero } from '../hero';
 // import { HEROES } from './mock-heroes';
 export interface DXHero {
+    id: number;
     name: string;
     avatar: string;
     description: string;
@@ -34,16 +35,17 @@ export class DXHeroService {
     getAll() {
         return this.table.toArray();
     }
-    add(data) {
+    add(data: any) {
         return this.table.add(data);
     }
-    update(id, data) {
+    update(id: number, data: any) {
         return this.table.update(id, data);
     }
-    remove(id) {
+    remove(id: number) {
         return this.table.delete(id);
     }
-    getId(id) {
-        console.log(id);
+    getInfo(id: number) {
+        return this.getAll()
+            .then((heroes) => heroes.find(hero => hero.id === id));
     }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DXHero, DXHeroService } from './../app-service/core/dxhero.service';
+import { DXHero, DXHeroService } from './../core/service/dxhero.service';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -15,6 +15,5 @@ export class HeroDashboardComponent implements OnInit {
     ngOnInit(): void {
         this.dxHeroService.getAll()
             .then(heroes => this.heroes = heroes);
-            // .then(heroes => this.heroes = heroes.slice(1, 5));
     }
 }

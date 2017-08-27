@@ -10,7 +10,7 @@ mixin tableTd(...items)
         td!= item
 
 //- hero list
-table(mdSort)
+table(mdSort, (mdSortChange)='sortData($event)')
     tr
         +tableTh(
             ['ID', 'id'],
@@ -21,7 +21,7 @@ table(mdSort)
         )
     
     tr(
-        *ngFor='let hero of heroes',
+        *ngFor='let hero of dxHeroList',
         (click)='onSelect(hero)',
         [class.selected]='hero === selectedHero'
     )
@@ -37,7 +37,7 @@ table(mdSort)
                 (click)='goHeroDetail(hero.id)'
             ) description
         td
-            i.material-icons delete
+            i.material-icons((click)='delHero(hero.id)') delete
 
 hr
 
@@ -49,24 +49,3 @@ hr
 //-     [pageSizeOptions]='pageSizeOptions',
 //-     (page)='pageEvent = $event'
 //- )
-
-
-
-
-
-
-//- md-table(#table, [dataSource]='dataSource')
-//-     ng-container(cdkColumnDef='id')
-//-         md-header-cell(*cdkHeaderCellDef) ID
-//-         md-cell(*cdkCellDef='let row') {{row}}
-//-     ng-container(cdkColumnDef='name')
-//-         md-header-cell(*cdkHeaderCellDef) Name
-//-         md-cell(*cdkCellDef='let row') {{row}}
-//-     ng-container(cdkColumnDef='description')
-//-         md-header-cell(*cdkHeaderCellDef) Name
-//-         md-cell(*cdkCellDef='let row') {{row}}
-    
-//-     md-header-row(*cdkHeaderRowDef='displayedColumns')
-//-     md-row(*cdkRowDef='let row; columns: DisplayedColumns;')
-
-//- hr

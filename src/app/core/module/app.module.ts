@@ -12,12 +12,11 @@ import { HttpModule } from '@angular/http';
  * Module
  */
 import { AppMdModule } from './app-md.module';
-import { AppComponent } from '../app-main/app.component';
+import { AppComponent } from './../component/app.component';
 import { ComponentModule } from './app-component.module';
-import { HeroService } from '../app-service/hero.service';
 import { HeroRouting } from './app-routing.module';
-import { DXHeroService } from './../app-service/core/dxhero.service';
-import { CoreModule } from './../app-service/core/core.module';
+import { DXHeroService } from './../service/dxhero.service';
+import { CoreModule } from './../service/core.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,7 @@ import { CoreModule } from './../app-service/core/core.module';
     CoreModule
   ],
   exports: [AppMdModule],
-  providers: [HeroService, DXHeroService],
+  providers: [DXHeroService],
   bootstrap: [AppComponent]
 })
 
