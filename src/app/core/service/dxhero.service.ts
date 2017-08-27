@@ -6,6 +6,11 @@ import { Injectable } from '@angular/core';
 import Dexie from 'dexie';
 import { DexieService } from './dexie.service';
 
+
+// search
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 /**
  * Data
  */
