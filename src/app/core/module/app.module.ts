@@ -18,6 +18,9 @@ import { HeroRouting } from './app-routing.module';
 import { DXHeroService } from './../service/dxhero.service';
 import { CoreModule } from './../service/core.module';
 
+/**
+ * Pipe
+ */
 import { SearchPipe } from './../pipe/search.pipe';
 
 @NgModule({

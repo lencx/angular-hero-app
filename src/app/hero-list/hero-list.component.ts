@@ -4,7 +4,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 // import { MdSort, MdPaginator, MdTableModule } from '@angular/material';
-import { Sort } from '@angular/material';
+import { PageEvent, Sort } from '@angular/material';
 /**
  * inject service
  */
@@ -20,25 +20,38 @@ import { DXHeroService, DXHero, HeroWithID } from './../core/service/dxhero.serv
 export class HeroListComponent implements OnInit {
     dxHeroList: Array<HeroWithID> = [];
     selectedHero: DXHero;
+
+    // heroes sort
     sortedData: any;
+
+    // heroes paginator
+    statesPage: Array<HeroWithID> = [];
+    heroesLen: number;
+    pageSize = 5;
+    pageSizeOptions = [5, 10, 15];
 
     constructor(
         private dxHeroService: DXHeroService,
-        private router: Router,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
         this.getDXHero();
     }
+
+    // Selected hero
     onSelect(hero: DXHero): void {
         this.selectedHero = hero;
         // console.log(hero);
     }
+
+    // Go to the hero detail page
     goHeroDetail(id: number): void {
         // console.log(this.selectedHero, id);
         this.router.navigate(['/detail', id]);
     }
 
+    // Remove the hero
     delHero(id: number): void {
         this.dxHeroService.remove(id)
             .then(() => this.dxHeroList = this.dxHeroList
@@ -50,10 +63,30 @@ export class HeroListComponent implements OnInit {
      */
     getDXHero(): void {
         this.dxHeroService.getAll()
-            .then((heroes: Array<HeroWithID>) => this.dxHeroList = heroes);
+            .then((heroes: Array<HeroWithID>) => {
+                this.dxHeroList = heroes;
+                this.statesPage = heroes.slice(0, this.pageSize);
+                this.heroesLen = heroes.length;
+            });
     }
 
+    /**
+     * Paginator
+     * @param {Object} - pageIndex, pageSize, length
+     */
+    paginatorEvent(_evt: PageEvent): void {
+        // console.log(_evt);
+        const tmp = this.dxHeroList;
+        const start = _evt.pageIndex * _evt.pageSize;
+        this.statesPage = tmp.slice(start, start + _evt.pageSize);
+    }
+
+    /**
+     * Sort
+     * @param {Object} - Material Sort
+     */
     sortData(sort: Sort) {
+        // console.log(sort);
         const data = this.dxHeroService.getAll()
             .then(heroes => this.dxHeroList = heroes.slice());
 
@@ -72,11 +105,7 @@ export class HeroListComponent implements OnInit {
                 }
             }));
     }
-
     compare(a, b, isAsc) {
         return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
     }
 }
-
-
-// https://stackoverflow.com/questions/45014257/how-to-use-md-table-with-services-in-angular-4

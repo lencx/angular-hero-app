@@ -3,7 +3,7 @@
  */
 // import { NgModule } from '@angular/core';
 // tslint:disable-next-line:max-line-length
-import { MdCardModule, MdButtonModule, MdInputModule, MdSortModule, MdPaginatorModule } from '@angular/material';
+import { MdCardModule, MdButtonModule, MdInputModule, MdSortModule, MdPaginatorModule, MdTooltipModule, MdDialogModule, MdSnackBarModule } from '@angular/material';
 // import { CdkTableModule } from '@angular/cdk';
 
 export const AppMdModule = [
@@ -13,5 +13,8 @@ export const AppMdModule = [
     // MdTableModule,
     MdSortModule,
     MdPaginatorModule,
+    MdTooltipModule,
+    MdDialogModule,
+    MdSnackBarModule
     // CdkTableModule
 ];

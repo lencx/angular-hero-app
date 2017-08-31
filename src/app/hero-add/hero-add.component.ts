@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 
 import { DXHeroService, HeroWithID } from './../core/service/dxhero.service';
 
+import { MdSnackBar } from '@angular/material';
+
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'hero-add',
@@ -16,7 +18,8 @@ export class HeroAddComponent {
     avatar: string;
     constructor(
         private dxHeroService: DXHeroService,
-        private router: Router
+        private router: Router,
+        public snackBar: MdSnackBar
     ) { }
 
     /**
@@ -67,7 +70,11 @@ export class HeroAddComponent {
             .then(id => {
                 this.dxHeroList = [...this.dxHeroList, Object.assign({}, heroInfo, { id })];
             });
-
-        this.router.navigate(['/dashboard']);
+        this.snackBar.open('Add hero active', 'Ok', {
+            duration: 2000
+        });
+        setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+        }, 2200);
     }
 }

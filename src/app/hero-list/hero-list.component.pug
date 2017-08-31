@@ -7,9 +7,10 @@ mixin tableTh(...items)
 
 mixin tableTd(...items)
     each item in items
-        td!= item
+        td(mdTooltip!= item)!= item
 
 //- hero list
+//- del-dialog
 table(mdSort, (mdSortChange)='sortData($event)')
     tr
         +tableTh(
@@ -21,7 +22,7 @@ table(mdSort, (mdSortChange)='sortData($event)')
         )
     
     tr(
-        *ngFor='let hero of dxHeroList',
+        *ngFor='let hero of statesPage',
         (click)='onSelect(hero)',
         [class.selected]='hero === selectedHero'
     )
@@ -43,9 +44,9 @@ hr
 
 //- hero-detail([hero]='selectedHero')
 //- hero-pagination((heroPage)='onHeroPage($event)')
-//- md-paginator(
-//-     [length]='heroesLen',
-//-     [pageSize]='pageSize',
-//-     [pageSizeOptions]='pageSizeOptions',
-//-     (page)='pageEvent = $event'
-//- )
+md-paginator(
+    [length]='heroesLen',
+    [pageSize]='pageSize',
+    [pageSizeOptions]='pageSizeOptions',
+    (page)='paginatorEvent($event)'
+)
