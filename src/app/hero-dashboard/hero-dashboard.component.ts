@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 import { DXHero, DXHeroService } from './../core/service/dxhero.service';
 
@@ -10,10 +11,17 @@ import { DXHero, DXHeroService } from './../core/service/dxhero.service';
 })
 
 export class HeroDashboardComponent implements OnInit {
-    constructor(private dxHeroService: DXHeroService) {}
+    constructor(
+        private dxHeroService: DXHeroService,
+        private router: Router
+    ) {}
     heroes: DXHero[];
     ngOnInit(): void {
         this.dxHeroService.getAll()
             .then(heroes => this.heroes = heroes);
+    }
+    goHeroDetail(id: number): void {
+        // console.log(this.selectedHero, id);
+        this.router.navigate(['/detail', id]);
     }
 }

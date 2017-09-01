@@ -1,6 +1,70 @@
-
+@import './../../assets/sass/main.scss';
+// $txt: #d81150, #75d700, #30a9de, #ffbc42,#e53a40;
+$txt: rgb(70, 120, 110), rgb(20, 50, 190), rgb(170, 50, 120), rgb(74, 184, 37), rgb(70, 60, 150), rgb(90, 210, 220);
 .avatar {
     img {
         width: 100%;
+    }
+}
+ul {
+    padding: 0;
+    list-style: none;
+    li {
+        cursor: pointer;
+    }
+}
+.grid {
+    li {
+        margin-bottom: 5px;
+    }
+    .desc {
+        background-image: linear-gradient(to right, $txt);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+ul.result {
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    margin: -20px 0 0;
+    z-index: 9;
+    li {
+        padding: 0 10px 0 0;
+        background: #eee;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 3px;
+        border: solid 1px #ddd;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, .6);
+        @include border-right-radius(5px);
+        &:nth-child(2n) {
+            transform: skew(15deg);
+        }
+        &:nth-child(2n+1) {
+            transform: skew(-15deg);
+        }
+        &:hover {
+            transform: skew(0) translateX(5px);
+            background: #7344CF;
+            color: #eee;
+            box-shadow: 1px 2px 4px rgba(187, 38, 59, 0.70);
+        }
+        .id {
+            @include border-left-radius(5px);
+            display: inline-block;
+            padding: 0 8px;
+            height: 100%;
+            margin-right: 10px;
+            background: rgba(100, 200, 150, .8);
+            color: #efefef;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .7);
+            text-shadow: 0 1px 2px rgba(50, 50, 50, .9);
+            vertical-align: top;
+        }
+        .name {
+            @include ellipsis(240px);
+        }
     }
 }

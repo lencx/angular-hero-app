@@ -3,6 +3,7 @@ mixin nav(...items)
         a(md-button, routerLink= item[0], routerLinkActive='active')
             .material-icons= item[1]
 
+router-outlet
 nav
     +nav(
         ['/dashboard', 'dashboard'],
@@ -10,6 +11,3 @@ nav
         ['/heroes', 'view_list'],
         ['/setting', 'settings']
     )
-
-hr
-router-outlet

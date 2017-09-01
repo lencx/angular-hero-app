@@ -24,4 +24,4 @@
 
 * [Use pug template with angular4](https://stackoverflow.com/questions/45687501/angular4-template-reference-variable-use-pug-template-error)
 * [Search](https://stackoverflow.com/questions/40678206/angular-2-filter-search-list)
-* [Use md-table with services](// https://stackoverflow.com/questions/45014257/how-to-use-md-table-with-services-in-angular-4)
+* [Use md-table with services](https://stackoverflow.com/questions/45014257/how-to-use-md-table-with-services-in-angular-4)

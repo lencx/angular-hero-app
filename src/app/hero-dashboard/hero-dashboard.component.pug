@@ -1,8 +1,14 @@
 //- hero-search
-md-input-container
-    input(mdInput, [(ngModel)]='query', placeholder="Search")
-div(*ngFor='let item of heroes | search:"id,name":query') {{item.name}}
-
+#search
+    md-input-container
+        input(mdInput, [(ngModel)]='query', placeholder="Search")
+    ul.result
+        li(
+            *ngFor='let item of heroes | search:"id,name":query',
+            (click)='goHeroDetail(item.id)'
+        )
+            span.id {{item.id}}
+            span.name {{item.name}}
 hr
 
 ul.grid
@@ -13,4 +19,4 @@ ul.grid
                     img([src]='hero.avatar')
                 md-card-title NO.{{hero.id}}
                 md-card-subtitle {{hero.name}}
-            md-card-content {{hero.description}} 
+            md-card-content.desc {{hero.description}} 

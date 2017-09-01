@@ -6,7 +6,8 @@ div(*ngIf='hero')
         | {{hero.id}}
     div
         label Avatar:
-        img([src]='hero.avatar')
+        .avatar
+            img([src]='hero.avatar')
     div
         label Name:
         input([(ngModel)]='hero.name', placeholder='name')

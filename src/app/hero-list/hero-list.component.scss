@@ -1,3 +1,4 @@
+@import './../../assets/sass/main.scss';
 a {
     color: #5DB558;
     &:hover {
@@ -12,11 +13,8 @@ a {
 
 table {
     td {
-        max-width: 50px;
-        word-break: keep-all;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include ellipsis(50px);
+        display: table-cell;        
     }
 }
 
