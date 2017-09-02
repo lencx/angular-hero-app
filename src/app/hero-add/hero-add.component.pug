@@ -1,7 +1,14 @@
 md-input-container
     input(mdInput, #heroName, placeholder='name')
-input(type='file', (change)='fileChangeEvent($event)')
-canvas(*ngIf='avatar')
+
+//- button.btn() Add Image
+.upload-img
+    input#inputFile(
+        type='file',
+        accept='image/*',
+        (change)='fileChangeEvent($event)',
+        data-title='Drag and drop a image'
+    )
 md-input-container
     textarea(
         mdInput, cols=30, rows=3,

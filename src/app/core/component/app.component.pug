@@ -1,13 +1,24 @@
 mixin nav(...items)
     each item in items
-        a(md-button, routerLink= item[0], routerLinkActive='active')
-            .material-icons= item[1]
+        if item[0] === '/'
+            a(routerLink='/')
+                span.logo
+        else
+            a(
+                md-button,
+                routerLink= item[0],
+                routerLinkActive='active',
+                mdTooltip!= item[1]
+            )
+                .material-icons= item[2]
 
-router-outlet
 nav
     +nav(
-        ['/dashboard', 'dashboard'],
-        ['/add', 'person_add'],
-        ['/heroes', 'view_list'],
-        ['/setting', 'settings']
+        ['/dashboard', 'Hero Dashboard', 'dashboard'],
+        ['/add', 'Add Hero', 'person_add'],
+        ['/', '.logo'],
+        ['/heroes', 'Hero List', 'view_list'],
+        ['/setting', 'Setting', 'settings']
     )
+section.main
+    router-outlet

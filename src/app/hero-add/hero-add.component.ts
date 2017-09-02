@@ -14,8 +14,9 @@ import { MdSnackBar } from '@angular/material';
 
 export class HeroAddComponent {
     dxHeroList: Array<HeroWithID> = [];
-    uploadMessage: string;
+    // uploadMessage: string;
     avatar: string;
+    uploadState = false;
     constructor(
         private dxHeroService: DXHeroService,
         private router: Router,
@@ -29,11 +30,12 @@ export class HeroAddComponent {
         // console.log(fileInput);
         const file = fileInput.target.files[0];
         // console.log(file);
-        if (!file.type.match('image/*')) {
-            this.uploadMessage = 'Please select image';
-            return false;
-        }
-        this.uploadMessage = '';
+        // if (!file.type.match('image/*')) {
+        //     this.uploadMessage = 'Please select image';
+        //     return false;
+        // }
+        // this.uploadMessage = '';
+        this.uploadState = true;
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = (e: any) => {

@@ -19,6 +19,15 @@
     border-bottom-right-radius: $radius;
 }
 
+%clear-fix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+        zoom: 1;
+    }
+}
+
 /**
 * variable
 */

@@ -1,11 +1,33 @@
-body {
-    padding: 0;
-    background: #999;
-}
 nav {
+    display: flex;
     position: fixed;
-    bottom: 0;
-    z-index: 10001;
+    width: 100%;
+    height: 50px;
     background: #fff;
-    border-top: solid 1px #d2d2d2;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    // border-top: solid 1px #d2d2d2;
+    box-shadow: 0 2px 2px rgba(100, 100, 100, .3);
+    .logo {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+        background: url('/src/assets/img/logo.png') no-repeat center center;
+        background-size: 100% 100%;
+        border-radius: 50%;
+        box-shadow: inset 0 0 2px rgba(100, 100, 100, .9);
+        box-sizing: border-box;
+        vertical-align: -20px;
+    }
+    a {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        line-height: 50px;
+    }
+}
+.main {
+    padding: 60px 16px 20px;
 }

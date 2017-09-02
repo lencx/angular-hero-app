@@ -2,6 +2,7 @@
 #search
     md-input-container
         input(mdInput, [(ngModel)]='query', placeholder="Search")
+        i.search-ico.material-icons search
     ul.result
         li(
             *ngFor='let item of heroes | search:"id,name":query',

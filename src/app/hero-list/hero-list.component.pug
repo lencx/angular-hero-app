@@ -10,43 +10,51 @@ mixin tableTd(...items)
         td(mdTooltip!= item)!= item
 
 //- hero list
-//- del-dialog
-table(mdSort, (mdSortChange)='sortData($event)')
-    tr
-        +tableTh(
-            ['ID', 'id'],
-            ['Name', 'name'],
-            ['Description'],
-            ['Edit'],
-            ['Delete']
-        )
-    
-    tr(
-        *ngFor='let hero of statesPage',
-        (click)='onSelect(hero)',
-        [class.selected]='hero === selectedHero'
+section(*ngIf='statesPage!=""; else elseBlock')
+    table(
+        mdSort,
+        (mdSortChange)='sortData($event)'
     )
-        +tableTd(
-            '{{hero.id}}',
-            '{{hero.name}}',
-            '{{hero.description}}'
+        //- table - header
+        tr
+            +tableTh(
+                ['ID', 'id'],
+                ['Name', 'name'],
+                ['Description'],
+                ['Edit'],
+                ['Delete']
+            )
+        
+        //- table - hero data
+        tr(
+            *ngFor='let hero of statesPage',
+            (click)='onSelect(hero)',
+            [class.selected]='hero === selectedHero'
         )
-        td
-            i.material-icons(*ngIf='hero !== selectedHero') edit
-            i.material-icons(
-                *ngIf='hero === selectedHero',
-                (click)='goHeroDetail(hero.id)'
-            ) description
-        td
-            i.material-icons((click)='delHero(hero.id)') delete
+            +tableTd(
+                '{{hero.id}}',
+                '{{hero.name}}',
+                '{{hero.description}}'
+            )
+            //- edit hero
+            td
+                i.material-icons(*ngIf='hero !== selectedHero') edit
+                i.material-icons(
+                    *ngIf='hero === selectedHero',
+                    (click)='goHeroDetail(hero.id)'
+                ) description
+            //- delete hero
+            td
+                i.material-icons((click)='delHero(hero.id)') delete
 
-hr
+    //- paginator
+    md-paginator(
+        [length]='heroesLen',
+        [pageSize]='pageSize',
+        [pageSizeOptions]='pageSizeOptions',
+        (page)='paginatorEvent($event)'
+    )
 
-//- hero-detail([hero]='selectedHero')
-//- hero-pagination((heroPage)='onHeroPage($event)')
-md-paginator(
-    [length]='heroesLen',
-    [pageSize]='pageSize',
-    [pageSizeOptions]='pageSizeOptions',
-    (page)='paginatorEvent($event)'
-)
+//- No hero data
+ng-template(#elseBlock)
+    p Pleace Add Hero!!!
